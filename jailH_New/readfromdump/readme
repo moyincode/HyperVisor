@@ -1,0 +1,8 @@
+
+generate .dmp and .info file from the config file using script create_dump.py
+    python create_dump.py jetson-tk1.c jetson-tx1.c
+
+and then using those files as input for ReadDmp to populate the data structures of cell
+
+g++ -std=c++11 -w -g ReadDmp.cpp test_ReadDmp.cpp ../RootCell.cpp ../JailHouseCell.cpp ../MemRegion.cpp ../PciDevice.cpp ../IrqChip.cpp ../JailHouseCellList.cpp cell_type_util.cpp
+
